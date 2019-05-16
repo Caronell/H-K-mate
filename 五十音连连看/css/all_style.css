@@ -1,0 +1,394 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+@font-face {
+	font-family: 'kaiti';
+	src: url(../fonts/stkaiti.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'xingkai';
+	src: url(../fonts/stxingkai.ttf) format('truetype');
+}
+
+body {
+	padding: 0;
+	margin: 0 auto;
+	font: 14px/1.5;
+	-webkit-user-select: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background: url(../img/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.slideout-menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 0;
+	width: 256px;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	display: none;
+}
+
+.slideout-panel {
+	position: relative;
+	z-index: 1;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+	overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+	display: block;
+}
+
+.config {
+	list-style: none;
+	position: relative;
+	padding: 2%;
+	margin-left: -20%;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	text-align: left;
+	line-height: 250%;
+}
+
+.config-button {
+	list-style: none;
+	position: relative;
+	padding: 2%;
+	margin-left: -15%;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 250%;
+	background-color: bisque;
+	color: red;
+	border-left: 2px solid burlywood;
+	border-right: 2px solid burlywood;
+	border-top: 2px solid burlywood;
+	border-bottom: 2px solid burlywood;
+	box-sizing: border-box;
+}
+
+.config-button: before {
+	display: inline-block;
+	content: "";
+	height: 100%;
+	vertical-align: middle;
+}
+
+.config-button: active {
+	background-color: burlywood;
+}
+
+.switches-on {
+	margin-left: 12%;
+	margin-right: -30%;
+	margin-bottom: -4.5%;
+}
+
+.switches-off {
+	margin-left: 12%;
+	margin-right: -30%;
+	margin-bottom: -4.5%;
+}
+
+#panel {
+	height: 100%;
+	width: 100%;
+	background: url(../img/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#menu {
+	color: whitesmoke;
+	width: 50%;
+	background: url(../img/config-menu.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 1px 0px 10px black;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+#menu h1 {
+	margin-left: 5%;
+}
+
+.btn-hamburger {
+	border: none;
+	position: relative;
+	margin-left: 3%;
+	margin-top: 0%;
+	outline: none;
+	background: url(../img/menu.png) no-repeat center;
+	width: 50px;
+	height: 50px;
+}
+
+#win {
+	position: absolute;
+	z-index: 7;
+	background-color: linen;
+	height: 20%;
+	width: 70%;
+	text-align: center;
+	font-size: larger;
+	color: orangered;
+	margin-top: 60%;
+	margin-left: 14%;
+	box-shadow: 2px 2px 10px black;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+	border-left: 4px solid burlywood;
+	border-right: 4px solid burlywood;
+	border-top: 4px solid burlywood;
+	border-bottom: 4px solid burlywood;
+	vertical-align: middle;
+	display: none;
+}
+
+#win div {
+	position: absolute;
+	z-index: 8;
+	height: 30%;
+	width: 40%;
+	margin-top: -5%;
+	margin-left: 29%;
+	text-align: center;
+	font-size: 19px;
+	color: darkslategrey;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+	border-left: 2px solid burlywood;
+	border-right: 2px solid burlywood;
+	border-top: 2px solid burlywood;
+	border-bottom: 2px solid burlywood;
+	vertical-align: middle;
+	background-color: bisque;
+	display: block;
+	line-height: 190%;
+	font-family: kaiti;
+}
+
+#title {
+	width: 100%;
+	text-align: center;
+	font-size: 52px;
+	margin-top: 0;
+	font-family: xingkai;
+}
+
+#timetext {
+	width: 100%;
+	font-size: 16px;
+	margin-left: 5%;
+	margin-bottom: -3%;
+}
+
+#besttime {
+	width: 100%;
+	font-size: 16px;
+	margin-left: 55.5%;
+	margin-bottom: -3%;
+	margin-top: -6.8%;
+	color: red;
+}
+
+#total {
+	width: 100%;
+	height: 100%;
+	min-width: 300px;
+	max-width: 640px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1000;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+fuck {
+	width: 100%;
+	height: 100%;
+}
+
+fuck ul {
+	list-style: none;
+	padding: 0;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 90%;
+	height: 100%;
+}
+
+fuck ul li {
+	position: relative;
+	width: 20%;
+	height: 10%;
+	font-size: 32px;
+	font-family: kaiti;
+	/*font-weight: bold;*/
+	float: left;
+	text-align: center;
+	background-color: linen;
+	border-left: 2px solid burlywood;
+	border-top: 2px solid burlywood;
+	box-sizing: border-box;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+fuck ul li:before {
+	display: inline-block;
+	content: "";
+	height: 100%;
+	vertical-align: middle;
+}
+
+fuck ul li:active {
+	background-color: burlywood;
+}
+
+fuck ul li[class="inactive"] {
+	cursor: pointer;
+	color: darkslategrey;
+	background-color: linen;
+}
+
+fuck ul li[class="active"] {
+	cursor: pointer;
+	color: red;
+	background-color: burlywood;
+}
+
+fuck ul li[class="disabled"] {
+	cursor: default;
+	color: linen;
+}
+
+fuck ul li[class="disabled"]:active {
+	background-color: linen;
+}
+
+fuck ul li[id="reset"] {
+	cursor: pointer;
+	margin-top: 5%;
+	width: 40%;
+	background-color: bisque;
+	border-right: 2px solid burlywood;
+	border-bottom: 2px solid burlywood;
+	font-size: 22px;
+}
+
+fuck ul li[id="showtip"] {
+	cursor: pointer;
+	margin-top: 5%;
+	margin-left: 20%;
+	width: 40%;
+	background-color: bisque;
+	border-right: 2px solid burlywood;
+	border-bottom: 2px solid burlywood;
+	font-size: 22px;
+}
+
+fuck ul li[id="showtip"]:active {
+	background-color: burlywood;
+}
+
+fuck ul li[id="reset"]:active {
+	background-color: burlywood;
+}
+
+fuck ul li:nth-child(5n+5) {
+	border-right: 2px solid burlywood;
+}
+
+fuck ul li:nth-child(n+26) {
+	border-bottom: 2px solid burlywood;
+}
+
+[data-long] {
+	font-size: 21px;
+}
+
+#tip {
+	pointer-events: none;
+	position: relative;
+	z-index: 10000;
+	width: 100%;
+	height: 100%;
+	color: gray;
+	margin-top: 1.1%;
+}
+
+#tip ul {
+	list-style: none;
+	padding: 0;
+	/*虽然不知道为什么，但PC端按照注释里的设置就是正常显示，手机端就不是*/
+	margin-left: 3.5%;
+	/*30.7*/
+	margin-top: -166.5%;
+	/*-47*/
+	margin-right: 5%;
+	width: 89.5%;
+	/*37.8*/
+	height: 100%;
+}
+
+#tip ul li {
+	width: 20%;
+	height: 10%;
+	font-size: 10px;
+	float: right;
+	position: relative;
+	text-align: right;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+#creator {
+	width: 100%;
+	position: relative;
+	text-align: right;
+	font-size: small;
+	color: darkgray;
+	margin-left: -1%;
+	margin-top: -43%;
+}
+
+#hint {
+	margin-top: -40%;
+	margin-left: 30.2%;
+	position: absolute;
+	z-index: 9999;
+	height: 8%;
+	width: 40%;
+	display: none;
+}
+
+#version {
+	width: 100%;
+	position: relative;
+	text-align: left;
+	font-size: small;
+	color: darkgray;
+	margin-left: 1.5%;
+	margin-top: -6.8%;
+}

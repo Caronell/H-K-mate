@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>五十音无忧</title>
+		<script type="text/javascript" src="js/Core.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/slideout.min.js"></script>
+		<audio id="bgm" src="audio/bgm.mp3" autoplay="autoplay" loop="loop"></audio>
+		<link type="text/css" rel="stylesheet" href="css/all_style.css" />
+	</head>
+
+	<body onload="start()">
+
+		<nav id="menu" class="menu">
+			<h1>设置</h1>
+			<ul>
+				<li class="config">
+					仅清音表&#12288;
+					<img id="s1" class="switches-on" onclick="ShiftSwitch()" src="img/switch-on.png" />
+				</li>
+				<li class="config">
+					背景音乐&#12288;
+					<img id="s3" class="switches-on" onclick="ShiftSwitch()" src="img/switch-on.png" />
+				</li>
+				<li class="config">
+					点击声效&#12288;
+					<img id="s4" class="switches-on" onclick="ShiftSwitch()" src="img/switch-on.png" />
+				</li>
+			</ul>
+			<h1>模式</h1>
+			<ul>
+				<li class="config">
+					平假↔片假
+					<img id="s5" class="switches-on" onclick="ShiftSwitch()" src="img/switch-on.png" />
+				</li>
+				<li class="config">
+					平假↔读音
+					<img id="s6" class="switches-off" onclick="ShiftSwitch()" src="img/switch-off.png" />
+				</li>
+				<li class="config">
+					片假↔读音
+					<img id="s7" class="switches-off" onclick="ShiftSwitch()" src="img/switch-off.png" />
+				</li>
+			</ul>
+			<h1>其他</h1>
+			<ul>
+				<li class="config-button" onclick="ClearRecord()">
+					重置最佳时间记录
+				</li>
+			</ul>
+		</nav>
+		<div id="win">
+			<h4>
+				恭喜，所有方块消除完毕
+			</h4>
+			<div onclick="restart()">
+				重新开始
+			</div>
+		</div>
+		<main id="panel" class="pannel">
+			<header>
+				<button class="btn-hamburger js-slideout-toggle"></button>
+			</header>
+			<div id="title">
+				五十音无忧
+			</div>
+			<div id="timetext">
+				已用时间：00:00:00
+			</div>
+			<div id="besttime">
+				最佳时间：00:00:00
+			</div>
+			<div id="total">
+				<fuck>
+					<ul id="list"></ul>
+				</fuck>
+			</div>
+			<div id="tip">
+				<ul id="tiplist"></ul>
+			</div>
+			<div id="creator" style="visibility: hidden;">
+				CUGB 信息工程学院 王欣鹏
+			</div>
+			<div id="version">
+				当前版本：v2.3.1
+			</div>
+		</main>
+		<img id="hint" src="img/hint.png"></img>
+		<audio id="correct" src="audio/correct.mp3" class="se"></audio>
+		<audio id="incorrect" src="audio/incorrect.mp3" class="se"></audio>
+		<audio id="select_romaji" src="audio/decision_common.mp3" class="se"></audio>
+		<audio id="show_tip" src="audio/decision_showromaji.mp3" class="se"></audio>
+		<audio id="resetting" src="audio/decision_restart.mp3" class="se"></audio>
+		<audio id="cancel" src="audio/cancel_romaji.mp3" class="se"></audio>
+		<script src="dist/slideout.min.js"></script>
+		<script>
+			var slideout = new Slideout(
+			{
+				'panel': document.getElementById('panel'),
+				'menu': document.getElementById('menu'),
+				'padding': 190, // 190
+				'tolerance': 70
+			});
+			document.querySelector('.btn-hamburger').addEventListener('click', function()
+			{
+				slideout.toggle();
+			});
+		</script>
+	</body>
+
+</html>
